@@ -22,8 +22,6 @@ spec:
       port: 54 # open 54 too in case tufindns is installed
     - port: 80
       protocol: TCP
-  - to:
-    - namespaceSelector: {}
 EOF
 
 ! kubectl run -it --rm --restart=Never curl --image=appropriate/curl --command -- curl --max-time 3 -s -o /dev/null -w "%{http_code}" www.google.com
